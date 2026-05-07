@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사지선다 - 테스트 웹사이트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">사지선다</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-category="전체">전체</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>전체 탐색하기</h3>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-category="성격">성격</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>성격 테스트</h3>
+                                <ul>
+                                    <li><a href="#">MBTI 테스트</a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-category="연애">연애</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>연애 테스트</h3>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-category="능력">능력</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>능력 테스트</h3>
+                                <ul>
+                                    <li><a href="#">기억력 테스트</a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-category="기타">기타</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>기타 테스트</h3>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h1 id="category-title">전체</h1>
+            
+            <div id="grid-전체" class="project-grid">
+                <a href="mbti-test.html" target="_blank" class="project-card">
+                    <img src="img/mbti.png" alt="MBTI 테스트" class="card-image">
+                    <div class="card-info">
+                        <h2>MBTI 테스트</h2>
+                        <p>나의 진짜 성격은 무엇일까?</p>
+                    </div>
+                </a>
+                <a href="memory-test.html" target="_blank" class="project-card">
+                    <img src="img/memory.png" alt="기억력 테스트" class="card-image">
+                    <div class="card-info">
+                        <h2>기억력 테스트</h2>
+                        <p>나의 기억력 한계는 어디까지일까??</p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="grid-성격" class="project-grid" style="display: none;">
+                <a href="mbti-test.html" target="_blank" class="project-card">
+                    <img src="img/mbti.png" alt="MBTI 테스트" class="card-image">
+                    <div class="card-info">
+                        <h2>MBTI 테스트</h2>
+                        <p>나의 진짜 성격은 무엇일까?</p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="grid-연애" class="project-grid" style="display: none;">
+                </div>
+
+            <div id="grid-능력" class="project-grid" style="display: none;">
+                <a href="memory-test.html" target="_blank" class="project-card">
+                    <img src="img/memory.png" alt="기억력 테스트" class="card-image">
+                    <div class="card-info">
+                        <h2>기억력 테스트</h2>
+                        <p>나의 기억력 한계는 어디까지일까??</p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="grid-기타" class="project-grid" style="display: none;">
+                </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
