@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -32,6 +32,15 @@ const CARDS = [
     tag: "연애",
   },
   {
+    categories: ["전체", "연애"] as Category[],
+    href: "/mbti-love",
+    img: "/img/love.svg",
+    alt: "MBTI 궁합 테스트",
+    title: "MBTI 궁합 테스트",
+    desc: "연인의 MBTI와 나는 잘 맞을까?",
+    tag: "연애",
+  },
+  {
     categories: ["전체", "능력"] as Category[],
     href: "/memory",
     img: "/img/memory.svg",
@@ -46,12 +55,75 @@ const CARDS = [
     href: "/alba",
     img: "/img/mbti.svg", // 💡 알바 전용 이미지가 아직 없어서 임시로 mbti 이미지를 넣었어요! 나중에 alba.svg 등으로 바꿔주세요.
     alt: "알바생 멘탈 테스트",
-    title: "K-알바생 멘탈 테스트",
+    title: "알바생 멘탈 테스트",
     desc: "당신에게 닥칠 억까 상황 속에서 살아남으세요",
     tag: "기타",
   },
 
+  {
+    categories: ["전체", "기타"] as Category[],
+    href: "/spending",
+    img: "/img/mbti.svg", // 나중에 돈/카드 관련 이미지로 교체 추천
+    alt: "소비 습관 테스트",
+    title: "소비 습관 테스트",
+    desc: "내 통장이 텅장이 되는 이유, 소비 습관을 알아보세요",
+    tag: "기타",
+  },
+
+  {
+    categories: ["전체", "성격"] as Category[],
+    href: "/empathy",
+    img: "/img/mbti.svg", // 공감 능력이니까 우선 하트(love) 이미지를 임시로 적용했습니다.
+    alt: "공감 능력 테스트",
+    title: "공감 능력 테스트",
+    desc: "너 T야? 나의 진짜 공감 능력을 확인해보세요",
+    tag: "성격",
+  },
+
+  {
+    categories: ["전체", "능력"] as Category[], // '전체'와 '능력' 탭에 표시됩니다.
+    href: "/detective",
+    img: "/img/memory.svg", // 임시 이미지입니다. 나중에 추리력 전용 돋보기 같은 이미지로 바꿔주세요!
+    alt: "추리력 테스트",
+    title: "추리력 테스트",
+    desc: "주어진 상황 속에서 숨겨진 모순과 범인을 찾아내세요",
+    tag: "능력",
+  },
+  
+  {
+    categories: ["전체", "능력"] as Category[],
+    href: "/reaction",
+    img: "/img/memory.svg", // 임시 이미지입니다. 나중에 번개나 스톱워치 같은 이미지로 교체해 주세요!
+    alt: "반응속도 테스트",
+    title: "반응속도 테스트",
+    desc: "나의 반응속도는 0.00몇 초일까? 한계를 시험해보세요.",
+    tag: "능력",
+  },
+
+  {
+    categories: ["전체", "능력"] as Category[],
+    href: "/aim",
+    img: "/img/memory.svg", // 임시 이미지입니다. 나중에 과녁(Target) 같은 이미지로 바꿔주세요.
+    alt: "동체시력 테스트",
+    title: "동체시력 테스트",
+    desc: "1부터 20까지 숫자를 찾아 클릭! 당신의 눈과 손의 협응력은?",
+    tag: "능력",
+  },
+
+
+  {
+    categories: ["전체", "능력"] as Category[],
+    href: "/shooting",
+    img: "/img/memory.svg", // 과녁판이나 총알 같은 이미지로 바꿔주시면 좋습니다!
+    alt: "사격 능력 테스트",
+    title: "사격 능력 테스트",
+    desc: "움직이는 표적을 쏴라! 당신의 동체시력과 에임 한계는?",
+    tag: "능력",
+  },
+
 ];
+
+
 
 type LikesState = Record<string, { count: number; liked: boolean }>;
 

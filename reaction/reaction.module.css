@@ -1,0 +1,173 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  padding: 20px;
+  user-select: none; /* 클릭 시 텍스트 드래그 방지 */
+}
+
+/* 상태별 배경색 */
+.start, .result { background-color: #0071e3; } /* 파란색 (기본/결과) */
+.waiting { background-color: #ff3b30; } /* 빨간색 (대기) */
+.ready { background-color: #34c759; } /* 초록색 (클릭 타이밍!) */
+.early { background-color: #1d1d1f; } /* 검은색 (부정 출발) */
+.finish { background-color: #fbfbfd; color: #1d1d1f; cursor: default; }
+
+/* 진행 화면 텍스트 */
+.gameContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToMainLink {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.backToMainLink:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mainText {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.subText {
+  font-size: 24px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.progress {
+  position: absolute;
+  bottom: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+/* 결과 화면 */
+.resultScreen {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.resultEmoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.resultTitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.scoreBoard {
+  background: #f5f5f7;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.averageBox {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e5e5ea;
+}
+
+.averageBox h3 {
+  font-size: 16px;
+  color: #86868b;
+  margin-bottom: 8px;
+}
+
+.averageScore {
+  font-size: 56px;
+  font-weight: bold;
+  color: #0071e3;
+  margin-bottom: 8px;
+}
+
+.rankText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.historyList li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #3d3d3d;
+}
+
+.btnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.restartBtn {
+  padding: 18px;
+  background: #0071e3;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.restartBtn:hover {
+  background: #005bb5;
+}
+
+.mainBtn {
+  padding: 18px;
+  background: #e5e5ea;
+  color: #1d1d1f;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mainBtn:hover {
+  background: #d2d2d7;
+}

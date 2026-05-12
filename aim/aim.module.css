@@ -1,0 +1,130 @@
+.container {
+  min-height: 100vh;
+  background-color: #fbfbfd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1d1d1f;
+  user-select: none;
+}
+
+/* ── 시작 화면 ── */
+.startScreen { text-align: center; max-width: 500px; width: 100%; }
+.startEmoji { font-size: 80px; margin-bottom: 20px; }
+.startTitle { font-size: 42px; font-weight: bold; margin-bottom: 16px; letter-spacing: -1px; }
+.startDesc { font-size: 18px; color: #86868b; margin-bottom: 48px; }
+.startBtn { padding: 18px 48px; background: #1d1d1f; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.startBtn:hover { transform: scale(1.03); background: #3d3d3d; }
+
+/* ── 게임 화면 ── */
+.gameScreen {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToMainLink {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #86868b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.backToMainLink:hover { color: #1d1d1f; }
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.targetInfo { font-size: 20px; font-weight: 600; color: #86868b; }
+.targetInfo span { font-size: 32px; font-weight: bold; color: #0071e3; margin-left: 8px; }
+
+.timerBox {
+  font-size: 32px;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums; /* 타이머 숫자가 흔들리지 않게 고정 */
+}
+
+/* 그리드 레이아웃 (5행 4열 = 20개) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.numberBtn {
+  aspect-ratio: 1 / 1;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  background-color: #1d1d1f;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.3s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numberBtn:active { transform: scale(0.9); }
+
+/* 클릭해서 넘어간 숫자는 숨김 처리 */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── 결과 화면 ── */
+.resultScreen { max-width: 500px; width: 100%; text-align: center; }
+.resultEmoji { font-size: 80px; margin-bottom: 16px; }
+.resultRank { font-size: 24px; font-weight: bold; color: #0071e3; margin-bottom: 8px; }
+.resultTitle { font-size: 32px; font-weight: bold; margin-bottom: 30px; letter-spacing: -1px; }
+
+.scoreBoard {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.scoreBoard h3 { font-size: 16px; color: #86868b; margin-bottom: 12px; }
+.finalTime { font-size: 56px; font-weight: bold; color: #1d1d1f; }
+
+.restartBtn { padding: 18px 40px; background: #0071e3; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 16px; width: 100%; transition: background 0.2s; }
+.restartBtn:hover { background: #005bb5; }
+.mainBtn { padding: 16px 40px; background: transparent; color: #86868b; border: 2px solid #d2d2d7; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.2s; }
+.mainBtn:hover { border-color: #1d1d1f; color: #1d1d1f; }
+
+/* 모바일 화면 대응 */
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 16px; }
+  .numberBtn { font-size: 22px; border-radius: 12px; }
+  .header { padding: 16px 20px; }
+  .targetInfo { font-size: 16px; }
+  .targetInfo span { font-size: 24px; }
+  .timerBox { font-size: 24px; }
+}

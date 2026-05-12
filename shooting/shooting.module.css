@@ -1,0 +1,107 @@
+.container {
+  min-height: 100vh;
+  background-color: #fbfbfd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1d1d1f;
+  user-select: none;
+}
+
+/* ── 시작 화면 ── */
+.startScreen { text-align: center; max-width: 500px; width: 100%; }
+.startEmoji { font-size: 80px; margin-bottom: 20px; }
+.startTitle { font-size: 40px; font-weight: bold; margin-bottom: 16px; letter-spacing: -1px; }
+.startDesc { font-size: 16px; color: #86868b; margin-bottom: 40px; line-height: 1.6; }
+.diffTitle { font-size: 20px; margin-bottom: 20px; }
+
+.difficultyContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.btn { padding: 16px 32px; font-size: 18px; font-weight: bold; border: 2px solid #d2d2d7; border-radius: 16px; background: white; cursor: pointer; transition: all 0.2s; }
+.btn:hover { background-color: #f5f5f7; border-color: #1d1d1f; color: #1d1d1f; transform: translateY(-3px); }
+.challengeBtn { color: #ff3b30; border-color: #ff3b30; }
+.challengeBtn:hover { background-color: #ff3b30; color: white; border-color: #ff3b30; }
+
+/* ── 게임 화면 ── */
+.gameScreen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: #1d1d1f;
+  display: flex;
+  flex-direction: column;
+  cursor: crosshair; /* 사격 게임용 십자선 커서 */
+  overflow: hidden;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 10;
+}
+
+.backBtn {
+  background: transparent;
+  color: #86868b;
+  border: 1px solid #86868b;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.backBtn:hover { color: white; border-color: white; }
+
+.scoreBox { font-size: 24px; font-weight: bold; color: #01ff95; }
+
+.livesBox { font-size: 24px; display: flex; gap: 8px; }
+.heartAlive { opacity: 1; filter: drop-shadow(0 0 5px rgba(255,59,48,0.5)); }
+.heartDead { opacity: 0.2; filter: grayscale(100%); }
+
+.playArea {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden; /* 표적이 밖으로 나가면 안 보이게 */
+}
+
+/* 표적 디자인 및 낙하 애니메이션 */
+.targetObj {
+  position: absolute;
+  top: -100px; /* 화면 위쪽 바깥에서 시작 */
+  background: radial-gradient(circle, #ff3b30 20%, #ffffff 30%, #ff3b30 40%, #ff3b30 100%);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  animation-name: fallDown;
+  animation-timing-function: linear; /* 일정한 속도로 낙하 */
+  animation-fill-mode: forwards;
+}
+
+.targetObj:active { transform: scale(0.8); }
+
+@keyframes fallDown {
+  0% { top: -100px; transform: translateX(0); }
+  50% { transform: translateX(var(--sway)); }
+  100% { top: 110vh; transform: translateX(0); }
+}
+
+/* ── 결과 화면 ── */
+.resultScreen { max-width: 400px; width: 100%; text-align: center; z-index: 20; position: relative; }
+.resultEmoji { font-size: 80px; margin-bottom: 10px; }
+.resultTitle { font-size: 36px; font-weight: bold; margin-bottom: 30px; color: #ff3b30; }
+
+.scoreBoard { background: white; border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); }
+.scoreBoard h3 { font-size: 16px; color: #86868b; margin-bottom: 12px; }
+.finalScore { font-size: 48px; font-weight: bold; color: #1d1d1f; margin-bottom: 12px; }
+.rankBadge { display: inline-block; padding: 8px 16px; background: #f5f5f7; border-radius: 50px; font-size: 14px; font-weight: bold; color: #0071e3; }
+
+.restartBtn { padding: 18px 40px; background: #1d1d1f; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 16px; width: 100%; transition: background 0.2s; }
+.restartBtn:hover { background: #3d3d3d; }
+.mainBtn { padding: 16px 40px; background: transparent; color: #86868b; border: 2px solid #d2d2d7; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.2s; }
+.mainBtn:hover { border-color: #1d1d1f; color: #1d1d1f; }
